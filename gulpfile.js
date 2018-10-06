@@ -56,7 +56,7 @@ gulp.task("build", ["clean"], function (cb) {
 
 
 gulp.task("run", function (cb) {
-  runSequence("build", "watch", cb);
+  runSequence("build", "copy", cb);
 });
 
 gulp.task("watchAfterBuild", function (cb) {
