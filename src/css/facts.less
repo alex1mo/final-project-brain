@@ -1,0 +1,45 @@
+#facts {
+  height: 270px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #96e2d4;
+  margin-top: 110px;
+  #line {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    width: 62%;
+    & > div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      height: 50%;
+      width: 100%;
+    }
+    .number {
+      font-family: Montserrat;
+      color: #ffffff;
+      font-size: 72px; /* Приближение из-за подстановки шрифтов */
+      font-weight: 700;
+      text-align: center;
+    }
+    .text {
+      font-family: Montserrat;
+      color: #ffffff;
+      font-size: 14px; /* Приближение из-за подстановки шрифтов */
+      font-weight: 400;
+      text-align: center;
+      text-transform: uppercase;
+    }
+    .seporator {
+      opacity: 0.3;
+      background-color: rgb(255, 255, 255);
+      width: 1px;
+      height: 99%;
+    }
+  }
+}
