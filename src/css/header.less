@@ -1,0 +1,105 @@
+header {
+  width: 100%;
+  max-width: 1920px;
+  height: 1000px;
+  background-image: url(../assets/Layer15.png);
+  background-size: auto;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  & > div:first-child {
+    margin-top: 3%;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 70%;
+    #labe {
+      font-family: Montserrat;
+      color: #ffffff;
+      font-size: 30px; /* Приближение из-за подстановки шрифтов */
+      font-weight: 700;
+      text-align: left;
+    }
+    #menu {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      height: inherit;
+      width: 60%;
+      [name="nav"] {
+        width: 80%;
+        align-items: center;
+        justify-content: inherit;
+        display: flex;
+        .nav {
+          font-family: Montserrat;
+          color: #ffffff;
+          font-size: 14px; /* Приближение из-за подстановки шрифтов */
+          font-weight: 400;
+          text-align: center;
+          text-transform: uppercase;
+        }
+      }
+      [name="search"] {
+        display: flex;
+        width: 20%;
+        justify-content: space-evenly;
+        align-items: center;
+
+        .search {
+          width: 18px;
+          height: 15px;
+        }
+      }
+    }
+  }
+  & > div:last-child {
+    width: 42%;
+    height: 49%;
+    margin-top: 14%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    & > span:first-of-type {
+      font-family: "Kaushan Script", cursive;
+      color: #ffffff;
+      font-size: 72px; /* Приближение из-за подстановки шрифтов */
+      font-weight: 400;
+      text-align: center;
+    }
+    & > span:last-of-type {
+      font-family: Montserrat;
+      color: #ffffff;
+      font-size: 145px; /* Приближение из-за подстановки шрифтов */
+      font-weight: 700;
+      line-height: 140px;
+      text-align: center;
+      text-transform: uppercase;
+      flex: 1;
+    }
+    & > a {
+      border-style: solid;
+      border-width: 3px;
+      border-color: #ffffff;
+      box-sizing: border-box;
+      background-color: rgba(0, 0, 0, 0);
+      width: 160px;
+      height: 40px;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      span {
+        font-family: Montserrat;
+        color: #ffffff;
+        font-size: 14px; /* Приближение из-за подстановки шрифтов */
+        font-weight: 700;
+        text-align: center;
+        user-select: none;
+      }
+    }
+  }
+}

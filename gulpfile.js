@@ -12,11 +12,10 @@ var gulpIf = require("gulp-if");
 var clean = require("gulp-clean");
 var browserSync = require("browser-sync").create();
 
-const isDevelopment =
-  !process.env.NODE_ENV || process.env.NODE_ENV == "development";
+const isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV == "development";
 // $ NODE_ENV=production gulp styles
 
-gulp.task("css", function(cb) {
+gulp.task("css", function (cb) {
   gulp
     .src("src/**/*.{css,less}")
     .pipe(gulpIf(isDevelopment, sourcemaps.init()))
@@ -28,7 +27,7 @@ gulp.task("css", function(cb) {
   cb();
 });
 
-gulp.task("js", function(cb) {
+gulp.task("js", function (cb) {
   gulp
     .src("src/**/*.js")
     .pipe(gulpIf(isDevelopment, sourcemaps.init()))
@@ -39,20 +38,37 @@ gulp.task("js", function(cb) {
   cb();
 });
 
-gulp.task("html", function(cb) {
+gulp.task("html", function (cb) {
   gulp.src("src/index.html").pipe(gulp.dest("public"));
   cb();
 });
 
-gulp.task("clean", function(cb) {
-  return gulp.src("public", { read: false }).pipe(clean());
+gulp.task("clean", function (cb) {
+  return gulp.src("public", {
+    read: false
+  }).pipe(clean());
 });
 
-gulp.task("build", ["clean"], function(cb) {
+gulp.task("build", ["clean"], function (cb) {
   runSequence(["html", "css", "js"], cb);
 });
 
-gulp.task("watch", function(cb) {
+
+
+gulp.task("run", function (cb) {
+  runSequence("build", "watch", cb);
+});
+
+gulp.task("watchAfterBuild", function (cb) {
+  browserSync.watch("public/css/all.css").on("change", browserSync.reload);
+});
+
+gulp.task("copy", function () {
+  return gulp.src("src/assets/**/*.*").pipe(gulp.dest("public/assets"));
+});
+
+
+gulp.task("watch", function (cb) {
   gulp.watch("src/**/*.*", ["css"]);
   gulp.watch("src/**/*.js", ["js"]);
   gulp.watch("src/index.html", ["html"]);
@@ -60,26 +76,13 @@ gulp.task("watch", function(cb) {
   cb();
 });
 
-gulp.task("run", function(cb) {
-  runSequence("build", "watch", cb);
-});
-
-gulp.task("sync", function(cb) {
+gulp.task("sync", function (cb) {
   browserSync.init({
     server: "public"
   });
-
   browserSync.watch("src/**/*.*").on("change", browserSync.reload);
 });
 
-gulp.task("copy", function() {
-  return gulp.src("src/assets/**/*.*").pipe(gulp.dest("public/assets"));
-});
-
-gulp.task("watchAfterBuild", function(cb) {
-  browserSync.watch("public/css/all.css").on("change", browserSync.reload);
-});
-
-gulp.task("dev", function(cb) {
-  runSequence("build", ["watch", "copy", "sync", "watchAfterBuild"], cb);
+gulp.task("dev", function (cb) {
+  runSequence("build", ["copy", "watch", "sync", "watchAfterBuild"], cb);
 });
