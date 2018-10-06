@@ -1,0 +1,52 @@
+#feature {
+  background-image: url(../assets/Layer45.png);
+  width: 100%;
+  max-width: 1920px;
+  height: 850px;
+  margin-top: 122px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  & > div:first-of-type {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    flex: 0.8;
+    & > span:first-of-type {
+      font-family: "Kaushan Script";
+      color: #333333;
+      font-size: 24px; /* Приближение из-за подстановки шрифтов */
+      font-weight: 400;
+      text-align: center;
+    }
+    & > span:last-of-type {
+      font-family: Montserrat;
+      color: #333333;
+      font-size: 30px; /* Приближение из-за подстановки шрифтов */
+      font-weight: 700;
+      text-align: center;
+    }
+    .seporator {
+      background-color: #f38181;
+      width: 60px;
+      height: 3px;
+      opacity: 1;
+    }
+  }
+  & > div:last-of-type {
+    position: relative;
+    left: -20px;
+    & > img:first-of-type {
+      max-width: 447px;
+    }
+    & > img:last-of-type {
+      position: absolute;
+      max-width: 275px;
+      width: 100%;
+      top: 197px;
+      left: 362px;
+    }
+  }
+}
