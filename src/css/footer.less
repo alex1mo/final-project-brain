@@ -19,6 +19,39 @@ footer {
     }
     & > div:first-of-type {
       width: 40.1%;
+      & > div:first-of-type {
+        & > span:first-of-type {
+          font-family: Montserrat;
+          color: #cccccc;
+          font-size: 45.99px; /* Приближение из-за подстановки шрифтов */
+          font-weight: 700;
+          text-align: left;
+        }
+        & > div {
+          font-family: Roboto;
+          color: #999999;
+          font-size: 15px; /* Приближение из-за подстановки шрифтов */
+          font-weight: 400;
+          line-height: 24px; /* Приближение из-за подстановки шрифтов */
+          text-align: left;
+        }
+        & > span::last-of-type {
+          font-family: Montserrat;
+          color: #333333;
+          font-size: 18px; /* Приближение из-за подстановки шрифтов */
+          font-weight: 700;
+          text-align: left;
+          font-family: Montserrat;
+          color: #333333;
+          font-size: 14px; /* Приближение из-за подстановки шрифтов */
+          font-weight: 400;
+          text-align: left;
+        }
+      }
+      & > div:last-of-type {
+        display: flex;
+        flex-direction: column;
+      }
     }
     & > div:nth-of-type(2) {
       width: 28%;
@@ -35,9 +68,12 @@ footer {
         text-transform: uppercase;
       }
       & > div {
+        width: 100%;
+        min-height: 79px;
         display: flex;
-        justify-content: flex-start;
+        align-items: center;
         & > img {
+          width: 35.7%;
           margin-right: 20px;
         }
         & > div {
@@ -53,8 +89,7 @@ footer {
             text-align: left;
             text-transform: uppercase;
           }
-          & > span {
-            margin-top: 12px;
+          & > span > {
             font-family: Roboto;
             color: #999999;
             font-size: 13px; /* Приближение из-за подстановки шрифтов */
@@ -68,6 +103,36 @@ footer {
     }
     & > div:last-of-type {
       width: 31.9%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      & > span:first-of-type {
+        font-family: Montserrat;
+        color: #333333;
+        font-size: 14px; /* Приближение из-за подстановки шрифтов */
+        font-weight: 400;
+        text-align: left;
+        text-transform: uppercase;
+      }
+      & > div {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        & > img {
+          width: 25%;
+          margin: 1px;
+        }
+      }
+      & > span:last-of-type {
+        font-family: Roboto;
+        color: #333333;
+        font-size: 13px; /* Приближение из-за подстановки шрифтов */
+        font-weight: 300;
+        font-style: italic;
+        line-height: 24px; /* Приближение из-за подстановки шрифтов */
+        text-align: left;
+      }
     }
   }
   & > hr {
