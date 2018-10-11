@@ -2,24 +2,27 @@ footer {
   width: 100%;
   max-width: 1920px;
   min-height: 560px;
-  border: 1px solid;
   margin-top: 84px;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
   flex-direction: column;
   background-color: #f8f8f8;
-  & > div {
+  & > div:first-of-type {
     width: 62.5%;
-    border: 1px solid;
     min-height: 355px;
     display: flex;
-    & > div {
-      border: 1px solid;
-    }
     & > div:first-of-type {
       width: 40.1%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin-right: 31px;
       & > div:first-of-type {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         & > span:first-of-type {
           font-family: Montserrat;
           color: #cccccc;
@@ -48,9 +51,56 @@ footer {
           text-align: left;
         }
       }
+      & > hr {
+        background-color: #e5e5e5;
+        height: 1px;
+        width: 100%;
+      }
       & > div:last-of-type {
         display: flex;
         flex-direction: column;
+        & > div:first-of-type {
+          & > span {
+            font-family: Roboto;
+            color: #999999;
+            font-size: 15px; /* Приближение из-за подстановки шрифтов */
+            font-weight: 300;
+            font-style: italic;
+            line-height: 24px; /* Приближение из-за подстановки шрифтов */
+            text-align: left;
+          }
+          & > a {
+            width: 16px;
+            height: 14px;
+          }
+        }
+        & > div:last-of-type {
+          display: flex;
+          & > input {
+            border-style: solid;
+            border-width: 1px;
+            border-color: #e7e7e7;
+            box-sizing: border-box;
+            background-color: #ffffff;
+            max-width: 230px;
+            height: 40px;
+          }
+          & > button {
+            border: none;
+            background-color: #95e1d3;
+            max-width: 150px;
+            height: 40px;
+            & > span {
+              font-family: Montserrat;
+              color: #ffffff;
+              font-size: 14px; /* Приближение из-за подстановки шрифтов */
+              font-weight: 700;
+              text-align: center;
+              text-transform: uppercase;
+              padding: 15px;
+            }
+          }
+        }
       }
     }
     & > div:nth-of-type(2) {
@@ -139,5 +189,17 @@ footer {
     background-color: #e5e5e5;
     width: 62.5%;
     height: 1px;
+  }
+  & > div {
+    & > span {
+      font-family: Montserrat;
+      color: #333333;
+      font-size: 14px; /* Приближение из-за подстановки шрифтов */
+      font-weight: 400;
+      text-align: center;
+      & > a {
+        color: #ff8181;
+      }
+    }
   }
 }
